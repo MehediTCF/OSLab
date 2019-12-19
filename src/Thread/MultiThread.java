@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 public class MultiThread implements Runnable{
     Thread t;
     String name;
-//    private static final  Object lock = new Object();
+    private static final  Object lock = new Object();
 
     public MultiThread(String threadname) {
         name = threadname;
@@ -26,7 +26,11 @@ public class MultiThread implements Runnable{
         
     }
     
-    synchronized void synch(){
+    
+    
+
+    @Override
+    public void run() {
         for(int i=0;i<10;i++){
             System.out.println(name+": "+i);
             try {
@@ -36,13 +40,6 @@ public class MultiThread implements Runnable{
             }
         }
         System.out.println(name+"Exiting!");
-    }
-    
-    
-
-    @Override
-    public void run() {
-        synch();
         
         
     }

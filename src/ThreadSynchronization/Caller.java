@@ -25,7 +25,7 @@ public class Caller implements Runnable{
 
     @Override
     public void run() {
-        synchronized(callme){
+        {
         callme.call(message);
 
     }

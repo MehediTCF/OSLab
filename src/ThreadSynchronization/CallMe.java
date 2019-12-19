@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  * @author mehed
  */
 public class CallMe {
-        void call(String message){
+        synchronized void call(String message){
         System.out.println(""+message);
         try {
             Thread.sleep(1000);
